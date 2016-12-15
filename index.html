@@ -19,6 +19,7 @@
              float: left;
              margin: 2%;
              padding: 2%;
+             font-size: 500%;
              cursor: pointer;
              text-align: center;
              
@@ -49,11 +50,43 @@
         
              memory_array.memory_tile_shuffle();
              for(var i = 0; i <memory_array.length; i++){
-                 output += '<div id="tile_'+i+'" onclick="memoryFilptile(this,\''+memory_array[i]+'\')"></div>';         
+                 output += '<div id="tile_'+i+'" onclick="memoryFliptile(this,\''+memory_array[i]+'\')"></div>';         
                     }
         document.getElementById('mainBox').innerHTML = output;
         
      }
+     function memoryFliptile(tile,val){
+       if(tile.innerHTML == "" && memory_values.length < 2){
+           tile.style.background = '#fff';
+           tile.innerHTML = val;
+           if(memory_values.length == 0){
+               memory_values.push(val);
+               memory_tile_ids.push(tile.id);
+           } else if(memory_values.length == 1){
+               memory_values.push(val);
+               memory_tile_ids.push(tile.id);
+               if(memory_values[0] == memory_values[1]){
+                   tiles_flipped += 2;
+                   // clear both arrAYS
+                   memory_values = [];
+                   memory_tile_ids = [];
+                   
+                   //check to see if the whole board is cleared
+                   if(tiles_flipped == memory_array.length){
+                       alert("Board  clear ... generation new board");
+                       document.getelementById('mainBox').innerHTML = "";
+                       newBoard();
+                   }
+                   
+                   
+               }
+           }
+           
+       }
+         
+     }
+         
+     
          
        
      </script>
