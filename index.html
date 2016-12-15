@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+     <style>
+         #mainBox{
+             width: 80%;
+             height: 750px;
+             background-color: #999999;
+             margin: 5px auto;
+             padding: 5%;
+         }
+         #mainBox > div{
+             background-color: yellow;
+             border: #000 1px solid;
+             width: 15%;
+             height: 100px;
+             float: left;
+             margin: 2%;
+             padding: 2%;
+             cursor: pointer;
+             text-align: center;
+             
+         } 
+     </style>
+     <script>
+     document.write("zahdga");         
+         var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F'];
+         var memory_values = [];
+         var memory_tile_ids = [];
+         var tiles_flipped = 0;
+         Array.prototype.memory_tile_shuffle = function(){
+             var i = this.length , j ,temp;
+             while(--i > 0){
+                 j = Math.floor(Math.random() * (i+1));
+                 temp = this[j];
+                 this[j] = this[i];
+                 this[i] = temp;
+  
+         }
+             
+         }
+         function newBoard(){
+        
+             tiles_flipped = 0;
+             var output = '';
+        
+        
+             memory_array.memory_tile_shuffle();
+             for(var i = 0; i <memory_array.length; i++){
+                 output += '<div id="tile_'+i+'" onclick="memoryFilptile(this,\''+memory_array[i]+'\')"></div>';         
+                    }
+        document.getElementById('mainBox').innerHTML = output;
+        
+     }
+         
+       
+     </script>
+</head>
+<body>
+    <div id="mainBox">
+    </div>
+    <script>newBoard();</script>
+</body>
+</html>
