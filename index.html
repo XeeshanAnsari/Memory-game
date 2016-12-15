@@ -6,28 +6,28 @@
      <style>
          #mainBox{
              width: 80%;
-             height: 750px;
+             height: 600px;
              background-color: #999999;
              margin: 5px auto;
-             padding: 5%;
+             padding: 2%;
          }
          #mainBox > div{
              background-color: yellow;
              border: #000 1px solid;
-             width: 15%;
-             height: 100px;
+             width: 10%;
+             height: 70px;
              float: left;
              margin: 2%;
              padding: 2%;
-             font-size: 500%;
+             font-size: 400%;
              cursor: pointer;
              text-align: center;
              
          } 
      </style>
      <script>
-     document.write("zahdga");         
-         var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F'];
+   
+         var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J'];
          var memory_values = [];
          var memory_tile_ids = [];
          var tiles_flipped = 0;
@@ -50,12 +50,13 @@
         
              memory_array.memory_tile_shuffle();
              for(var i = 0; i <memory_array.length; i++){
-                 output += '<div id="tile_'+i+'" onclick="memoryFliptile(this,\''+memory_array[i]+'\')"></div>';         
+                 output += '<div id="tile_' + i + '" onclick="memoryFliptile(this ,\''+memory_array[i]+'\')"></div>';         
                     }
         document.getElementById('mainBox').innerHTML = output;
         
      }
      function memoryFliptile(tile,val){
+         
        if(tile.innerHTML == "" && memory_values.length < 2){
            tile.style.background = '#fff';
            tile.innerHTML = val;
@@ -79,7 +80,24 @@
                    }
                    
                    
-               }
+               }else {
+                       function flipback(){
+                           //FLip the 2 tiles back over
+                            
+                            var tile_1 = document.getElementById(memory_tile_ids[0]);
+                            var tile_2 = document.getElementById(memory_tile_ids[1]);
+                            
+                            tile_1.style.background = "yellow";
+                            tile_1.innerHTML = ""; 
+                            tile_2.style.background = "yellow";
+                            tile_2.innerHTML = "";
+                            //clear both arrays
+                            memory_values = [];
+                            memory_tile_ids = []; 
+                       }
+                       
+                       setTimeout(flipback, 700);
+                   }
            }
            
        }
