@@ -1,0 +1,20 @@
+ #mainBox{
+             width: 80%;
+             height: 600px;
+             background-color: #999999;
+             margin: 5px auto;
+             padding: 2%;
+         }
+         #mainBox > div{
+             background-color: yellow;
+             border: #000 1px solid;
+             width: 10%;
+             height: 70px;
+             float: left;
+             margin: 2%;
+             padding: 2%;
+             font-size: 400%;
+             cursor: pointer;
+             text-align: center;
+             
+         } 
