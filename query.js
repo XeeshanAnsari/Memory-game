@@ -1,4 +1,4 @@
-        var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J'];
+        var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L','M','M','N','N','O','O','P','P'];
          var memory_values = [];
          var memory_tile_ids = [];
          var tiles_flipped = 0;
@@ -21,7 +21,7 @@
         
              memory_array.memory_tile_shuffle();
              for(var i = 0; i <memory_array.length; i++){
-                 output += '<div id="tile_' + i + '" onclick="memoryFliptile(this ,\''+memory_array[i]+'\')"></div>';         
+                 output += '<div class="memory-boxes" id="tile_' + i + '" onclick="memoryFliptile(this ,\''+memory_array[i]+'\')"></div>';         
                     }
         document.getElementById('mainBox').innerHTML = output;
         
@@ -67,7 +67,7 @@
                             memory_tile_ids = []; 
                        }
                        
-                       setTimeout(flipback, 700);
+                       setTimeout(flipback, 500);
                    }
            }
            

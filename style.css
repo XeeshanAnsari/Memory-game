@@ -1,20 +1,37 @@
+ body{
+     padding: 0px;
+     margin: 0px;
+     background-color: cornflowerblue;
+ }
+ #container{
+     background-color: cornflowerblue;
+  
+     padding: 5%;
+    
+     
+ }
  #mainBox{
              width: 80%;
-             height: 600px;
+             
              background-color: #999999;
-             margin: 5px auto;
              padding: 2%;
+              margin: auto;
          }
-         #mainBox > div{
+#header{
+    width: 100%;
+    text-align: center;
+}         
+.memory-boxes{
              background-color: yellow;
              border: #000 1px solid;
-             width: 10%;
-             height: 70px;
+             width: 90px;
+             height: 90px;
              float: left;
-             margin: 2%;
+             margin: 1%;
+             font-size: 250%;
              padding: 2%;
-             font-size: 400%;
              cursor: pointer;
              text-align: center;
              
          } 
+         
